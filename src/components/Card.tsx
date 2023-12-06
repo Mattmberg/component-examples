@@ -9,7 +9,10 @@ export interface CardInterface {
 export const Card = ({ id, title, description, image, color }: CardInterface) => {
 
     return (
-        <div>
+        <div className ={`grid col-auto grid-rows-1 text-center my-5 shadow-lg p-4 ${color}`}>
+            <img src={`${image}`}/>
+            <h2>{title}</h2>
+            <p>{description}</p>
         </div>
     );
 };
