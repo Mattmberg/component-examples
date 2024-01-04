@@ -9,9 +9,9 @@ export interface FooterInterface {
 export const Footer = ({linkedinUrl, youtubeUrl, facebookUrl}: FooterInterface) => {
     return (
         <footer className ="">
-            <a href="#"><FaLinkedin/></a>
-            <a href="#"><FaYoutube/></a>
-            <a href="#"><FaFacebookSquare/></a>
+            <a href={linkedinUrl}><FaLinkedin/></a>
+            <a href={youtubeUrl}><FaYoutube/></a>
+            <a href={facebookUrl}><FaFacebookSquare/></a>
         </footer>
     );
 };

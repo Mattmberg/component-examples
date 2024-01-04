@@ -1,7 +1,15 @@
+import { Key } from "react";
+
+export interface NavItem {
+    index: Key;
+    item: String;
+    url: string;
+}
+
 export interface NavBarInterface {
     logoImageSrc: string;
     companySiteUrl: string;
-    navItems: string[];
+    navItems: NavItem[];
 };
 
 export const NavBar = ({logoImageSrc, companySiteUrl, navItems}: NavBarInterface) => {
@@ -9,9 +17,9 @@ export const NavBar = ({logoImageSrc, companySiteUrl, navItems}: NavBarInterface
         <div className ="">
             <a href={companySiteUrl}><img src={logoImageSrc}/></a>
             <ul>
-                {navItems.map((items, index) =>(
-                    <li key={items} className="">
-                        <a href="#">{items}</a>
+                {navItems.map((navItem: NavItem) =>(
+                    <li key={navItem.index} className="">
+                        <a href={navItem.url}>{navItem.item}</a>
                     </li>
                 ))}
             </ul>
